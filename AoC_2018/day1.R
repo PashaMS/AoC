@@ -22,11 +22,9 @@ input <- readLines(file.path("~/AoC", folder, "data/day1_input.txt"), warn = F) 
   as.numeric()
 input2 <- rep(input, 140)
 
-res <- sapply(1:length(input2), function(i) {
-  sum(input2[1:i]) + input2[i+1]
-}, simplify = TRUE)
+res_cumsum <- cumsum(input2)
 
-res2 <- as.data.frame(table(res))
+res2 <- as.data.frame(table(res_cumsum))
 res3 <- res2[res2$Freq > 1,]
 
 res4 <- data.frame(repeats = res3$res,
