@@ -6,6 +6,7 @@
 # Programmer: Pasha Foroudi
 # R Version: 4.1.1
 #-------------------------------------------------------------------------------------------------------------------------#
+library(tictoc)
 folder <- "AoC_2019" 
 
 #=======================================================#
@@ -30,7 +31,7 @@ print(paste("The answer is", sum(sum_these)))
 #=======================================================#
 # Part 2 - pure BASE R solution
 #=======================================================#
-
+tic()
 #create *fuel required* function, this time with zero-ing
 fuel_req2 <- function(mass) {
   res <- floor(mass/3)-2
@@ -54,3 +55,4 @@ while (all(v != 0)) {
 }
 
 print(paste("The answer is", sum(m)))
+toc()
